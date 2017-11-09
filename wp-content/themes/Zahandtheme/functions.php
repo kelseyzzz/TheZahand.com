@@ -8,18 +8,18 @@ function load_scripts() {
     wp_enqueue_script( 'script-name', get_template_directory_uri() . '/js/example.js', array(), '1.0.0', true );
     wp_enqueue_script( 'bootstrap-js', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array('jquery'), true);
     wp_enqueue_style( 'bootstrap-style', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' );
-    // wp_enqueue_script( 'script-name', get_template_directory_uri() . '/js/example.js', array(), '1.0.0', true );
+    wp_enqueue_script( 'script-custom', get_template_directory_uri() . '/assets/js/custom.js', array(), '1.0.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'load_scripts' );
 
 // Register Custom Post Type
-function leaders() {
+function Works() {
 
 	$labels = array(
-		'name'                  => _x( 'Leaders', 'Post Type General Name', 'text_domain' ),
-		'singular_name'         => _x( 'Leader', 'Post Type Singular Name', 'text_domain' ),
-		'menu_name'             => __( 'Leaders', 'text_domain' ),
-		'name_admin_bar'        => __( 'Leaders', 'text_domain' ),
+		'name'                  => _x( 'Works', 'Post Type General Name', 'text_domain' ),
+		'singular_name'         => _x( 'Work', 'Post Type Singular Name', 'text_domain' ),
+		'menu_name'             => __( 'Works', 'text_domain' ),
+		'name_admin_bar'        => __( 'Works', 'text_domain' ),
 		'archives'              => __( 'Item Archives', 'text_domain' ),
 		'attributes'            => __( 'Item Attributes', 'text_domain' ),
 		'parent_item_colon'     => __( 'Parent Item:', 'text_domain' ),
@@ -45,11 +45,11 @@ function leaders() {
 		'filter_items_list'     => __( 'Filter items list', 'text_domain' ),
 	);
 	$args = array(
-		'label'                 => __( 'Leader', 'text_domain' ),
+		'label'                 => __( 'Work', 'text_domain' ),
 		'description'           => __( 'This is the team.', 'text_domain' ),
 		'labels'                => $labels,
 		'supports'              => array( 'title', 'editor', ),
-		'taxonomies'            => array( 'category', 'post_tag' ),
+		'taxonomies'            => array(),
 		'hierarchical'          => false,
 		'public'                => true,
 		'show_ui'               => true,
@@ -63,13 +63,52 @@ function leaders() {
 		'publicly_queryable'    => true,
 		'capability_type'       => 'page',
 	);
-	register_post_type( 'leader', $args );
+	register_post_type( 'Work', $args );
 
+	$labels = array(
+		'name'                       => _x( 'Types', 'Taxonomy General Name', 'text_domain' ),
+		'singular_name'              => _x( 'Type', 'Taxonomy Singular Name', 'text_domain' ),
+		'menu_name'                  => __( 'Type', 'text_domain' ),
+		'all_items'                  => __( 'All Items', 'text_domain' ),
+		'parent_item'                => __( 'Parent Item', 'text_domain' ),
+		'parent_item_colon'          => __( 'Parent Item:', 'text_domain' ),
+		'new_item_name'              => __( 'New Item Name', 'text_domain' ),
+		'add_new_item'               => __( 'Add New Item', 'text_domain' ),
+		'edit_item'                  => __( 'Edit Item', 'text_domain' ),
+		'update_item'                => __( 'Update Item', 'text_domain' ),
+		'view_item'                  => __( 'View Item', 'text_domain' ),
+		'separate_items_with_commas' => __( 'Separate items with commas', 'text_domain' ),
+		'add_or_remove_items'        => __( 'Add or remove items', 'text_domain' ),
+		'choose_from_most_used'      => __( 'Choose from the most used', 'text_domain' ),
+		'popular_items'              => __( 'Popular Items', 'text_domain' ),
+		'search_items'               => __( 'Search Items', 'text_domain' ),
+		'not_found'                  => __( 'Not Found', 'text_domain' ),
+		'no_terms'                   => __( 'No items', 'text_domain' ),
+		'items_list'                 => __( 'Items list', 'text_domain' ),
+		'items_list_navigation'      => __( 'Items list navigation', 'text_domain' ),
+	);
+	$args = array(
+		'labels'                     => $labels,
+		'hierarchical'               => true,
+		'public'                     => true,
+		'show_ui'                    => true,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => true,
+		'show_tagcloud'              => true,
+	);
+	register_taxonomy( 'taxonomy', array( 'work' ), $args );
 }
-add_action( 'init', 'leaders', 0 );
 
+add_action( 'init', 'Works', 0 );
 
 
 
 add_theme_support('menus');
+
+function learningWordPress_setup(){
+	// Add featured image support
+	add_theme_support('post-thumbnails');
+}
+
+add_action('after_setup_theme', 'learningWordPress_setup');
 
