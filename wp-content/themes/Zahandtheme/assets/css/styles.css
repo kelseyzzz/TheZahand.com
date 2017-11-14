@@ -1,0 +1,58 @@
+@font-face {
+  font-family: animeb;
+  src: url(../fonts/animeace_b.ttf);
+  font-weight: normal;
+}
+body {
+  background-color: #f3e4e4;
+}
+nav.navbar {
+  background-color: transparent;
+  border: none;
+}
+nav.navbar li {
+  margin-bottom: 10px;
+  text-align: center;
+}
+@media screen and (min-width: 1200px) {
+  nav.navbar li {
+    margin-right: 20px;
+    margin-top: 20px;
+  }
+}
+nav.navbar li a {
+  padding: o;
+  color: white;
+  text-transform: uppercase;
+  font-size: 16px;
+  padding: 10px 0;
+}
+nav.navbar .navbar-header .navbar-brand {
+  color: white;
+}
+img.peace-img {
+  margin-top: -45%;
+  width: 100%;
+}
+@media screen and (min-width: 1200px) {
+  img.peace-img {
+    margin-top: -20%;
+    width: 70%;
+    margin-left: -10%;
+  }
+}
+.hero-text {
+  position: absolute;
+  top: 39%;
+  right: 0;
+}
+.hero-text h1 {
+  font-family: animeb;
+  line-height: 1.5;
+  font-size: 26px;
+}
+@media screen and (min-width: 1200px) {
+  .hero-text h1 {
+    font-size: 56px;
+  }
+}
