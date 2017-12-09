@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title> Kelsey's Website </title>
+	<title><?php wp_title(); ?></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<?php wp_head(); ?>
 </head>
 <body>
@@ -16,7 +17,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand kaza" href=" <?php echo home_url(); ?> ">KA ZA</a>
+      <a class="navbar-brand kaza" href=" <?php echo home_url(); ?> ">KELZEY</a>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

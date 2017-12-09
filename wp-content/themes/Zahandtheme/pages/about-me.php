@@ -13,28 +13,38 @@
 
 	<?php get_header(); ?>
 
-	<h1> <?php the_title(); ?> </h1>
+	
 
-	<?php
-		if ( have_posts() ) {
-			while ( have_posts() ) {
-				the_post();
-				the_content();
+	
+	<div class="hero-header">
+		<h1> <?php the_field('about_title'); ?> </h1>
+
+		<?php
+			if ( have_posts() ) {
+				while ( have_posts() ) {
+					the_post();
+					the_content();
+				}
 			}
-		}
 
 
-	?>
+		?>
+	</div>
+	<div class="hero-about">
+	</div>
+	
+		<?php 
 
-	<?php 
+			$image = get_field('image');
 
-		$image = get_field('image');
+			if( !empty($image) ): ?>
 
-		if( !empty($image) ): ?>
+				
+				<img class="img-responsive dog--img"  src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+				
 
-			<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-
-	<?php endif; ?>
+		<?php endif; ?>
+	
 
 
 	<?php the_field('Words'); ?>

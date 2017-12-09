@@ -12,14 +12,13 @@ function load_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'load_scripts' );
 
-// Register Custom Post Type
-function Works() {
+function work() {
 
 	$labels = array(
-		'name'                  => _x( 'Works', 'Post Type General Name', 'text_domain' ),
+		'name'                  => _x( 'Work', 'Post Type General Name', 'text_domain' ),
 		'singular_name'         => _x( 'Work', 'Post Type Singular Name', 'text_domain' ),
-		'menu_name'             => __( 'Works', 'text_domain' ),
-		'name_admin_bar'        => __( 'Works', 'text_domain' ),
+		'menu_name'             => __( 'Work', 'text_domain' ),
+		'name_admin_bar'        => __( 'Work', 'text_domain' ),
 		'archives'              => __( 'Item Archives', 'text_domain' ),
 		'attributes'            => __( 'Item Attributes', 'text_domain' ),
 		'parent_item_colon'     => __( 'Parent Item:', 'text_domain' ),
@@ -46,10 +45,9 @@ function Works() {
 	);
 	$args = array(
 		'label'                 => __( 'Work', 'text_domain' ),
-		'description'           => __( 'This is the team.', 'text_domain' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'editor', ),
-		'taxonomies'            => array(),
+		'supports'              => array( ),
+		'taxonomies'            => array( ),
 		'hierarchical'          => false,
 		'public'                => true,
 		'show_ui'               => true,
@@ -63,12 +61,13 @@ function Works() {
 		'publicly_queryable'    => true,
 		'capability_type'       => 'page',
 	);
-	register_post_type( 'Work', $args );
+	register_post_type( 'work', $args );
 
+	// Register Custom Taxonomy
 	$labels = array(
-		'name'                       => _x( 'Types', 'Taxonomy General Name', 'text_domain' ),
-		'singular_name'              => _x( 'Type', 'Taxonomy Singular Name', 'text_domain' ),
-		'menu_name'                  => __( 'Type', 'text_domain' ),
+		'name'                       => _x( 'Departments', 'Taxonomy General Name', 'text_domain' ),
+		'singular_name'              => _x( 'Department', 'Taxonomy Singular Name', 'text_domain' ),
+		'menu_name'                  => __( 'Taxonomy', 'text_domain' ),
 		'all_items'                  => __( 'All Items', 'text_domain' ),
 		'parent_item'                => __( 'Parent Item', 'text_domain' ),
 		'parent_item_colon'          => __( 'Parent Item:', 'text_domain' ),
@@ -97,9 +96,10 @@ function Works() {
 		'show_tagcloud'              => true,
 	);
 	register_taxonomy( 'taxonomy', array( 'work' ), $args );
-}
 
-add_action( 'init', 'Works', 0 );
+	
+}
+add_action( 'init', 'work', 0 );
 
 
 
