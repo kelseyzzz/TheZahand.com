@@ -58,13 +58,29 @@
 	<div id="about-me-identifier"></div>	
 
 	<div class="header-container">
+		<div class="block-A-container">
+			<div class="block-one">
+			
+			</div>
+			<div class="block-two">
+				
+			</div>
+				
+		</div>
+		
 		<h1> <?php the_field('about-header'); ?> </h1>
 		<h2> <?php the_field('about_sub-header'); ?> </h2>
+
+	
+		
 	</div>
 
-	<div class="left-righ-container">
+
+	<div class="left-right-container">
 		<div class="left-about">
-			
+			<div class="left-description">
+				<?php the_field('about_kelsey_description') ?>
+			</div>
 		</div>
 		<div class="right-about">
 
@@ -108,10 +124,17 @@
 	<div id="contact-identifier"></div>
 
 	<div class="contact-header-container">
-		
+		<?php the_field('contact_header') ?>
 	</div>
 	<div class="contact-information">
-		
+		<?php the_field('contact_info') ?>
+	</div>
+	</div>
+	<div class="insta-feed">
+		<div class="insta-header"> 
+			<h5>Latest Posts...</h5>
+		 </div>
+		<?php the_field('instagram') ?>
 	</div>
 
 	

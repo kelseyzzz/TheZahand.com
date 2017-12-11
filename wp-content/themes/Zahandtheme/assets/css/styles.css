@@ -30,8 +30,13 @@ nav.navbar .navbar-header .navbar-brand {
   color: white;
 }
 .introduction {
-  height: 60%;
+  height: 70%;
   overflow: hidden;
+}
+@media screen and (min-width: 720px) {
+  .introduction {
+    height: 800px;
+  }
 }
 @media screen and (min-width: 1200px) {
   .introduction {
@@ -42,11 +47,15 @@ nav.navbar .navbar-header .navbar-brand {
   margin-top: -25%;
   width: 100%;
 }
+@media screen and (min-width: 720px) {
+  .introduction img.peace-img {
+    margin-top: -43%;
+  }
+}
 @media screen and (min-width: 1200px) {
   .introduction img.peace-img {
     margin-top: -20%;
     width: 70%;
-    padding-top: -30%;
     margin-left: -10%;
   }
 }
@@ -67,30 +76,101 @@ nav.navbar .navbar-header .navbar-brand {
   }
 }
 .about-me {
+  background: #41ade5;
+  position: relative;
+  z-index: 1;
+}
+.about-me:before, .about-me:after {
+  background: inherit;
+  content: '';
+  display: block;
+  height: 50%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  z-index: -1;
+  -webkit-backface-visibility: hidden;
+}
+.about-me:before {
+  top: 0;
+  transform: skewY(1.5deg);
+  transform-origin: 100% 0;
+  border-top: 10px solid #fff;
+}
+.about-me:after {
+  bottom: 0;
+  transform: skewY(-1.5deg);
+  transform-origin: 100%;
+  border-bottom: 10px solid #fff;
+}
+.about-me {
+  max-width: 1150px;
+  display: flex;
   height: 100%;
-  width: 100%;
-  background-color: white;
+  margin: 0 auto;
+  flex-direction: column;
 }
 .about-me .header-container {
   display: flex;
   flex-direction: column;
 }
+.about-me .header-container .block-A-container {
+  display: flex;
+  height: 300px;
+  width: 100%;
+  transform: skewY(1.5deg);
+  border: 10px solid #fff;
+  border-top: none;
+  margin-top: 3px;
+}
+@media screen and (min-width: 720px) {
+  .about-me .header-container .block-A-container {
+    margin-top: -5px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .about-me .header-container .block-A-container {
+    margin-top: -10px;
+  }
+}
+.about-me .header-container .block-A-container .block-one {
+  background: #fecb2f;
+  width: 35%;
+  height: 100%;
+  border-right: 10px solid #fff;
+}
+.about-me .header-container .block-A-container .block-two {
+  height: 100%;
+  width: 65%;
+  background: url(../img/dot) repeat;
+}
 .about-me .header-container h1 {
+  position: absolute;
   margin-left: 35%;
   color: black;
 }
 .about-me .header-container h2 {
+  position: absolute;
   margin-left: 45%;
 }
-.about-me .left-righ-container {
+.about-me .left-right-container {
+  margin-top: 2rem;
   display: flex;
+  height: 100%;
+  justify-content: space-between;
 }
-.about-me .left-righ-container .right-about {
+.about-me .left-right-container .left-about {
+  width: 49%;
+  border: 2px solid white;
+}
+.about-me .left-right-container .right-about {
   background-color: orange;
+  border: 2px solid white;
+  width: 49%;
 }
-.about-me .left-righ-container .right-about img.dog--img {
-  position: relative;
-  width: 50%;
+.about-me .left-right-container .right-about img.dog--img {
+  margin: 0 auto;
+  width: 200px;
   height: 100%;
 }
 .hero-header {
