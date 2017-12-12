@@ -1,5 +1,6 @@
 
 
+
 jQuery( document ).ready(function( $ ) {
 
 	$('.filter-link').on('click', function(e){
@@ -11,6 +12,11 @@ jQuery( document ).ready(function( $ ) {
 		} else {
 			$('thumbnails').fadeIn();
 		}
+
+
+
+		
+
 
 
 	});

@@ -4,7 +4,6 @@
 <?php
 //dont put closing php tag on function php in wordpress
 function load_scripts() {
-    
     wp_enqueue_style( 'bootstrap-style', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' );
     wp_enqueue_style( 'style-name', get_stylesheet_uri() );
     wp_enqueue_script( 'bootstrap-js', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array('jquery'), true);
