@@ -107,10 +107,15 @@
 				if( !empty($dogImage) ): ?>
 
 					
-					<img class="img-responsive dog--img"  src="<?php echo $dogImage['url']; ?>" alt="<?php echo $dogImage['alt']; ?>" />
+					<img class="dog--img"  src="<?php echo $dogImage['url']; ?>" alt="<?php echo $dogImage['alt']; ?>" />
 					
 
 			<?php endif; ?>
+
+			<div class="roxy-quote">
+				<p>I want all of your food</p>
+				<div class="quote-img"></div>
+			</div>
 
 
 		</div>
@@ -177,6 +182,7 @@
 </div>
 
 
+<div class="dashed-line"></diiv>
 
 <div class="contact-section">
 <div id="contact-identifier"></div>
@@ -185,8 +191,11 @@
 	<div class="contact-header-container">
 		<?php the_field('contact_header') ?>
 	</div>
-	<div class="contact-information">
-		<?php the_field('contact_info') ?>
+	<div class="info-container">
+		<div class="info-box-left"></div>
+		<div class="contact-information">
+			<?php the_field('contact_info') ?>
+		</div>
 	</div>
 
 	<div class="boom">
@@ -201,11 +210,13 @@
 
 
 	
-	<div class="insta-feed">
+	<div class="insta-container">
 		<div class="insta-header"> 
 			<h5>Latest Posts...</h5>
 		 </div>
+		<div class="insta-feed">
 		<?php the_field('instagram') ?>
+		</div>
 	</div>
 
 	

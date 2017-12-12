@@ -57,6 +57,30 @@ $break-large: 1200px;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 body{
 	background: -webkit-linear-gradient(45deg, #1e5799 0%,#2992ad 40%,#75acbe 74%,#ffa3a4 100%); /* Chrome10-25,Safari5.1-6 */
 	background: linear-gradient(45deg, #1e5799 0%,#2992ad 40%,#75acbe 74%,#ffa3a4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
@@ -88,6 +112,7 @@ nav {
 				font-size: 1.7rem;
 				font-family: 'roof';
 				text-decoration: none;
+				transition: all 300ms;
 		
 				@media screen and (min-width: $break-medium) {
 						color: #e6d1d4;
@@ -111,7 +136,9 @@ nav {
 }
 
 
-
+.js-hero-animate {
+	opacity: 1 !important;
+	}
 
 
 
@@ -157,13 +184,17 @@ nav {
 
 		.hero-text{
 			position: absolute;
-			top: 50%;
+			top: 45%;
 			right: 49%;
+			transition: all 300ms ease-in;
+			
 
 			@media screen and (min-width: $break-large) {
 					right: 2%;
 					top: 42%;
 			}
+
+
 
 
 			h1 {
@@ -188,6 +219,7 @@ nav {
 		}	
 
 }
+
 
 
 
@@ -292,6 +324,8 @@ nav {
 				}
 			}
 
+			
+
 			.header-words{
 				margin-top: 10rem;
 				position: absolute;
@@ -300,6 +334,8 @@ nav {
 				text-align: center;
 				left: 6%;
 				flex-direction: column;
+				opacity: 0;
+				transition: all 200ms ease-in;
 				// padding-right: 1rem;
 
 				@media screen and (min-width: $break-medium) {
@@ -343,6 +379,7 @@ nav {
 			  position: relative;
 			  height: 320px;
 			  z-index: 1;
+			  transition: all 300ms ease-in;
 			  
 			  
   
@@ -431,8 +468,9 @@ nav {
 		.about-bubble-text {
 			position: relative;
 			text-align: center;
-			left: 9%;
+			left: 6%;
 			top: 27%;
+		
 
 				@media screen and (min-width: $break-medium) {
 						top: -89%;
@@ -499,7 +537,7 @@ nav {
 
 	 	.left-pic {
 	 		height: 550px;
-		    color: #0f0e0c;
+		    color: #dbc6c9;
 		    flex-shrink: 0;
 		    font-size: 2rem;
 		    margin-right: 1rem;
@@ -539,20 +577,55 @@ nav {
 				@media screen and (min-width: $break-large) {
 					height: 550px;
 				}
+
+				img {
 	 			
-	 		img {
-
-				
-				&:hover{
-					
-				}
-
-	 			&.dog--img {
- 					width: auto;
- 					height: 100%;
- 					
+		 			&.dog--img {
+	 					width: auto;
+	 					height: 100%;
+	 					
+		 			}
 	 			}
+
+	 		.roxy-show {
+	 			opacity: 1 !important;
 	 		}
+
+		 		.roxy-quote {
+		 			position: relative;
+		 			right: -33rem;
+		 			top: -37rem;
+		 			opacity: 0;
+		 			transition: all 200ms ease-in;
+
+
+
+		 				@media screen and (min-width: $break-large) {
+		 					opacity: 1;
+		 					right: -38rem;
+		 					top: -44rem;
+
+		 				}
+		 				p{
+		 					font-family: "acme";
+		 					margin-top: 43px;
+		 					margin-left: 3.7rem;
+		 					position: absolute;
+		 					z-index: 5;
+		 					width: 8rem;
+		 				}
+
+		 			.quote-img {
+		 				position: absolute;
+		 				height: 150px;
+		 				width: 150px;
+		 				background-image: url('../img/roo-roo-q.png');
+		 				background-size: cover;
+		 				z-index: 1;
+		 				background-repeat: no-repeat;
+		 			}
+		 		
+		 	}
 	 	}
 
 	 	.right-pic{
@@ -612,7 +685,7 @@ nav {
 		.right-dot-mobile {
 			width: 40%;
 			text-align: right;
-	 		color: black;
+	 		color: #dbc6c9;
 	 		font-size: 1.5rem;
 	 		text-shadow: 2px 2px 5px #636453;
 	 		padding: 2rem;
@@ -701,8 +774,6 @@ nav {
 
 
 
-
-
 //////////////////////////////////////////////////// CONTACT PAGE
 
 .contact-section{
@@ -717,8 +788,13 @@ nav {
 		
 
 	.contact-header-container{
-		width: 80%;
+
+		width: 70%;
 		padding: .8rem;
+		left: 30%;
+		margin-bottom: 2rem;
+		margin-top: 10rem;
+		position: relative;
 		padding-top: 1.6rem;
 		text-align: center;
 		font-size: 1.2rem;
@@ -727,46 +803,79 @@ nav {
 		    linear-gradient(to top right, #fecb2f, #f06d06);
 		font-family: 'animeb';
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-		margin-bottom: 11rem;
+	
 
 		@media screen and (min-width: $break-large) {
 			font-size: 1.7rem;
+			margin-bottom: 10rem;
 			letter-spacing: 0.1rem;
 		}
 	}
 
-	.contact-information{
-		position: absolute;
-		line-height: 1.2;
-		left: 16%;
-		margin-top: 6rem; 
-		font-family: roof;
-		font-size: 4rem;
-		color: #e7d1d4;
-		top: 171px;
-		text-align: center;
-		text-shadow: 2px 2px 5px #9ac2fc;
+	.info-container{
+		display: flex;
 
-		@media screen and (min-width: $break-medium) {
-			left: 25%;
-		}
+
+	  // .info-box-left{
+	  // 	width: 45%;
+	  // 	height: 300px;
+	  // 	background: transparent;
+
+	  // }
+
+		.contact-information{
+			padding-top: 6rem;
+			line-height: 1.2;
+			margin-top: 3rem; 
+			font-family: 'roof';
+			font-size: 3rem;
+			color: #e7d1d4;
+			margin-left: 13%;
+			transition: all 300ms ease-in;
+			text-align: center;
+			text-shadow: 2px 2px 5px #1a3255;
+			background-size: cover;
+			width: 55%;
+			background-repeat: no-repeat;
+
+			@media screen and (min-width: $break-medium) {
+				margin-left: 20%;
+				font-size: 4rem;
+			}
+			@media screen and (min-width: $break-large) {
+				margin-left: 41%;
+				font-size: 5rem;
+			}
 
 
 
 	}
+}
 
 	.boom{
 		margin: 0 auto;
 		height: 235px;
+		z-index: 1;
+		margin-top: -1rem;
    		width: 310px;
 		background-image: url("../img/boom.png");
 		background-repeat:no-repeat;
 		background-size: cover;
-		margin-bottom: 20rem;
+		margin-bottom: 15rem;
 		transform: skewY(1.5deg);
 
 		@media screen and (min-width: $break-medium) {
-			margin-right: 5rem;
+			margin-left: 47rem;
+			margin-bottom: -25rem;
+			margin-top: 12rem;
+		}
+		@media screen and (min-width: $break-large) {
+			margin-left: 41rem;
+			margin-top: -16rem;
+		}
+
+		&:hover{
+			transform: rotateZ(20deg);
 		}
 
 		.social-list{
@@ -780,20 +889,24 @@ nav {
 
 					a{
 						svg {
+							fill: #fce57e;
 
 							&.facebook{
+								&:hover{
 								fill: #ff68f2;
+								}
 							}
 							&.instagram{
+								&:hover{
 								fill: #44ff51;
+								}
 							}
 							&.linkedin{
+								&:hover{
 								fill: #4472ff;
+								}
 							}
 
-							 &:hover{
-							  	fill: #fce57e;
-							  }
 	
 						}
 					}
@@ -804,6 +917,36 @@ nav {
 			
 		}
 	}
+		.insta-container{
+				margin-left: 5rem;
+			.insta-header {
+				
+
+					h5 {
+						width: 30%;
+						margin-top: -12rem;
+						position: relative;
+						font-family: roof;
+						text-align: left;
+						font-size: 22px;
+						color: #fff;
+					}
+				}
+
+			.insta-feed {
+				max-width: 400px;
+				height: 500px;
+				position: relative;
+
+				@media screen and (min-width: $break-medium) {
+					
+				}
+
+
+			}
+		}
+
+	
 }
 
 
