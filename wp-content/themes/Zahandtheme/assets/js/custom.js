@@ -5,6 +5,17 @@ jQuery( document ).ready(function( $ ) {
 
 
 
+
+
+	var $hero = $('.hero-text');
+
+	 $hero.waypoint(function (){
+
+	 	$hero.addClass('hero-rise');
+	 }, { offset:'60%'} );
+
+
+
 	 var $headerW = $('.header-words');
 
 	 $headerW.waypoint(function (){
@@ -19,6 +30,9 @@ jQuery( document ).ready(function( $ ) {
 
 	 	$roxyQ.addClass('roxy-show');
 	 }, { offset:'60%'} );
+
+
+
 
 
 		
